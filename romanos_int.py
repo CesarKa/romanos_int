@@ -15,6 +15,8 @@ def traducir_romano(expresion):
     n_previo = 0
     for signo in expresion:
         valor = romanos_int(signo)
+        if valor == 0:
+            raise ValueError(f"Caracter inválido: {signo}")
         if n_previo >= valor:
             total += valor
         else:
